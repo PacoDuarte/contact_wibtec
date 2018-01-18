@@ -1,0 +1,20 @@
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
+
+class paco_try(models.Model):
+    _inherit = 'res.partner'
+
+    first_name = fields.Char('First Name', size=16)
+    last_name = fields.Char('Last Name', size=16)
+    k_nr = fields.Integer('k-Nr')
+    _sql_constraints = [
+        ('k_nr', 'unique(k_nr)', 'Please enter Unique k-Nr'),
+    ]
+
+    deliver_program_guide = fields.Boolean('Deliver program guide?')
+    n_copies = fields.Integer('No of copies')
+    reason = fields.Selection(selection=[('reason1','reason1'),('reason2','reason2')], string='Reason for cancelling')
+
+    no_thankyou_letter = fields.Boolean('No thank you letters?')
+    date_ = fields.Date('Date created')

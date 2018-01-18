@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_paco_tests" model="ir.ui.view">
+        <field name="name">view.partner.paco.try</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lang']" position="after">
+                <field name="first_name"/>
+            </xpath>
+            <xpath expr="//field[@name='first_name']" position="after">
+                <field name="last_name"/>
+            </xpath>
+
+            <xpath expr="//field[@name='last_name']" position="after">
+                <field name="k_nr"/>
+            </xpath>
+
+            <xpath expr="//field[@name='k_nr']" position="after">
+                <field name="deliver_program_guide"/>
+            </xpath>
+
+	    <xpath expr="//field[@name='deliver_program_guide']" position="after">
+                <field name="n_copies"/>
+            </xpath>
+
+	    <xpath expr="//field[@name='n_copies']" position="after">
+                <field name="reason"/>
+            </xpath>
+
+	    <xpath expr="//field[@name='reason']" position="after">
+                <field name="no_thankyou_letter"/>
+            </xpath>
+
+            <xpath expr="//field[@name='no_thankyou_letter']" position="after">
+                <field name="date_"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
